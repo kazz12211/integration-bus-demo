@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta charset="utf-8">
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="styles/materialize.min.css">
+<script src="webjars/angularjs/angular.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/controller.js"></script>
+<script src="scripts/service.js"></script>
+<script src="scripts/materialize.min.js"></script>
+<title>Integration Bus Demo</title>
+</head>
+<body ng-app="app" ng-controller="controller">
+	<header>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo leftmargin20px">Integration Bus
+					Demo</a>
+			</div>
+		</nav>
+	</header>
+	<main>
+	<section id="integration-event">
+	<form class="col s12">
+		<div class="row">
+			<div class="input-field col s6">
+				<input id="type" type="text" class="validate" ng-model="event.type" />
+				<label for="type">イベントタイプ</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="subtype" type="text" class="validate"
+					ng-model="event.subtype"/ > <label for="subtype">サブタイプ</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="object" type="text" class="validate" ng-model="event.object" />
+				<label for="object">オブジェクト</label>
+			</div>
+		</div>
+		<div class="row">
+			<a ng-click="postEvent()" class="btn right col s2">送信</a>
+		</div>
+	</form>
+	</section>
+	
+	<section id="workflow-event">
+	<form class="col s12">
+		<div class="row">
+			<a ng-click="processDocument()" class="btn center col s8">ドキュメントを処理済みにする</a>
+		</div>
+	</form>
+	</section>
+
+	</main>
+
+</body>
+</html>
